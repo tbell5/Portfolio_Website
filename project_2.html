@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/lightbox.min.css">
+    <script type="text/javascript" src="./js/lightbox-plus-jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/project.css">
+    <link rel="stylesheet" href="./css/project-mobile.css" media="screen and (max-width: 620px)">
+    <title>Project | Drink Menu</title>
+</head>
+<body>
+    <div class="header2 center-container bg-light">
+        <h1>mysh: A Basic Shell</h1>
+    </div>
+    <div class="write-up center-container">
+        <h2>Description</h2>
+        <p>
+            This short C program implements basic shell functionality, enabling users to run and manage programs in either "interactive" or "batch" modes. The shell will accept an arbitrary number of arguments for the specified programs. The shell also supports two commands: one to list the jobs which are currently running, and one to wait for a specified job which is currently running to finish. Accordingly, the shell allows users to specify that a job be run in the "background", in which case the user will be allowed to schedule other jobs in the meantime. Finally, users may opt to redirect output of a program via the standard redirect symbol, ">".
+        </p>
+        <h2>Implementaiton Basics</h2>
+        <p>
+            This project is written in C, and functional in both Linux and MacOS environments. When the ./mysh executable is launched within the terminal, the program provides a "shell within a shell", capable of handling up to 32 user-specified jobs simultaneously, which it does by parsing user input for up to 512 characters/line.
+        <div class="design">
+            <h2>Design Highlights and Specifics</h2>
+            <h3>Process Management</h3>
+            <p>
+                This program makes use of the fork( ) and exec( ) system calls from the POSIX operating system API to launch child processes and execute binary files. It also uses the POSIX dup2( ) for redirecting standard output via file descriptors. The shell also makes use of the wait( ) and waitpid( ) calls for managing child processes, once they are created.
+            </p>
+            <h3>File I/O, String, and Basic C Functionality</h3>
+            <p>This program makes extensive use of the <stdio.h> and <string.h> C libraries for the purpose of parsing user input from the shell, taking input from batch files, comparing text, writing to files, and delivering error messages. It also makes widespread use of basic C functionality such as structures, dynamically allocated memory, and pointers.</p>
+            </p>
+        </div>
+        <h2>Educational Takeaways</h2>
+        <ul>
+            <li>use of POSIX API for process creation, specifically via fork( ) and exec( )</li>
+            <li>use of POSIX API for managing a process's file descriptors and output, specifically via open( ) and dup2( )</li>
+            <li>* use of POSIX API for managing processes and extracting info about a process's status, specifically via wait( ) and waitpid( )</li>
+            <li>general C know-how for parsing/tokenizing user input, creating arrays of user arguments, and dynamically allocating said strings/string arrays</li>
+        </ul>
+    </div>
+    <div class="gallery center-container bg-light">
+        <h1>Gallery</h1>
+        <div class="pics">
+            <a href="./images/project_2/full/basic_jobs.png" data-lightbox="mygallery" data-title=
+            "Here the shell program ( ./mysh ) is shown performing basic functionality of parsing user input to run the executables ls and echo, the latter of which also properly demonstrates parsing of user arguments for a specified program."
+            >
+                <img src="./images/project_2/mini/basic_jobs.png" alt="">
+            </a>
+            <a href="./images/project_2/full/file_redirection.png" data-lightbox="mygallery" data-title=
+                "Here mysh is shown redirecting standard output from the standard Unix 'echo' program to a new, user-specified file. Also note the built-in 'exit' command being used in this interpretive use case."
+            >
+                <img src="./images/project_2/mini/file_redirection.png" alt="">
+            </a>
+            <a href="./images/project_2/full/batch_run.png" data-lightbox="mygallery" data-title=
+            "Here the program is seen operating in batch mode (see next slide for the corresponding batch file). Each line of the batch file is output before being interpreted. In this case, a file of code is copied to a text file and removed from the directory."
+            >
+                <img src="./images/project_2/mini/batch_run.png" alt="">
+            </a>
+            <a href="./images/project_2/full/batch_file.png" data-lightbox="mygallery" data-title=
+            "Batch file from the previous demo. Note the blank lines (included for clarity), which the shell program will simply skip."
+            >
+                <img src="./images/project_2/mini/batch_file.png" alt="">
+            </a>
+            <a href="./images/project_2/full/wait_jobs.png" data-lightbox="mygallery" data-title=
+            "Finally, an example of jobs being scheduled in the background via the use of the ampersand symbol appended to the specified program (and optional arguments). If background mode is specified, the shell allows users to launch other processes while the earlier process finishes running. A user may also choose to wait for a background job to finish running after they have run it (see the 'wait' command above). Alas, since the background process in this example contains an infinite loop, the user is forced to ctrl-c out pf the shell."
+            >
+                <img src="./images/project_2/mini/wait_jobs.png" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

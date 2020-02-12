@@ -1,0 +1,17 @@
+.header2 {
+    height: 10rem;
+}
+
+.gallery{
+    text-align: center;
+    padding: 0 0;
+}
+
+.gallery pics{
+    padding: 0 0;
+}
+
+.gallery img{
+    width: 260px;
+    padding: 1rem 0;
+}

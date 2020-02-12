@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d22f54c7f1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/mobile.css" media="screen and (max-width: 620px)">
+    <title>Tucker Bell | Undergraduate</title>
+</head>
+<body>
+    <!-- header -->
+    <div class="header bg-primary py-1">
+        <div class="center-container">
+            <i class="fas fa-terminal fa-2x"></i>
+            <ul class="navbar">
+                <li><a class="btn" href="#home">Home</a></li>
+                <li><a class="btn" href="#about">About</a></li>
+                <li><a class="btn" href="#projects">Projects</a></li>
+                <li><a class="btn" href="#classes">Classes</a></li>
+                <li><a class="btn resume" href="./files/CS_Resume_2019_Fall_PDF.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- showcase -->
+    <div class="showcase bg-primary center-container" id="home">
+        <div class="center-container">
+            <div class="logo-group">
+                <div class="logo-overlay">
+                    <h1 class="header-m">Tucker Bell</h1>
+                    <p>UW-Madison Undergraduate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about-->
+    <div class="about-wrapper center-container bg-light" id="about">
+        <div class="image-wrapper bg-secondary">
+            <img src="./images/" alt="profile_image.jpg">
+            <div class="blurb">
+                <h3 class="header-s">Fun Fact</h3>
+                <ul>
+                    <p>
+                        The panoramic landscape photo above was shot by me, on the beautiful Frozen to Death Plateau, in the Beartooth Range of Montana.  
+                    </p>
+                </ul>
+            </div>
+        </div>
+        <div class="info">
+            <h2 class="header-m">About Me</h2>
+            <p>Greetings, this is the home page of computer science and philosophy undergraduate Tucker Bell. Here I will be summarizing my projects and upper-level CS classes, which I will be completing over the next few years.</p>
+            <p>-Tucker Bell, July 27th, 2019</p>
+            <h3 class="header-s">Education</h3>
+            <ul>
+                <li>Currently pursuing a Bachelor of Science at UW-Madison, majoring in Computer Science as well as Philosophy.</li>
+                <li>Graduated from Princeton High School in 2016, Princeton, MN.</li>
+            </ul>
+            <h3 class="header-s">Interests</h3>
+            <ul>
+                <li>
+                    Programming; over the past two years I've learned Java, C, and C++.
+                </li>
+            </ul>
+            <h3 class="header-s">Experience</h3>
+            <ul>
+                <li>
+                    So far I've taken classes focusing on <span>data structures</span>, <span>object oriented programming</span>, and the basics of <span>computer systems design</span>
+                </li>
+            </ul>
+            <!-- <a onclick=" window.open('./files/CS_Resume_2019_PDF.pdf ','_blank')" >See Full Resume</a> -->
+            <a href="./files/CS_Resume_2019_Fall_PDF.pdf" target="_blank">See Full Resume</a>
+
+        </div>
+    </div>
+    
+    <!-- projects -->
+    <div class="projects-wrapper center-container" id="projects">
+        <div class="projects bg-primary">
+            <h2 class="header-m">Projects</h2>
+            <a href="./project_1.html">
+                <div class="project bg-light">
+                    <img src="./images/project_tiles/drink-menu.png" alt="img">
+                    <div class="info">
+                        <h3 class="header-s">Drink Menu Terminal Program</h3>
+                        <p class="tags">TOPICS: C++ Proficiency, Custom Data Types</p>
+                        <p class="description">A command line tool for exploring cocktail recipes and filtering by ingredient.
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a href="./project_2.html">
+                <div class="project bg-light">
+                    <img src="./images/project_tiles/shell.png" alt="img">
+                    <div class="info">
+                        <h3 class="header-s">mysh: A Basic Shell</h3>
+                        <p class="tags">TOPICS: POSIX job creation/management, C</p>
+                        <p class="description">A basic implementation of a functioning shell, which allows users to run and manage up to 32 processes.
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="image bg-secondary"></div>
+    </div>
+   
+    <!-- classes -->
+    <div id="classes" class="classes center-container">
+        <div class="info">
+            <h2 class="header-m">Classes</h2>
+            <h3 class="semester header-s">Fall 2019</h3>
+            <br>
+            <a href="./class-1.html" class="class">
+                CS 537 | Operating Systems <span class="symbol">&#9112;</span>
+            </a>         
+        </div>
+        <div class="image"></div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer center-container"></div>
+
+    <!-- jQuery scrip -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <!-- Local JS file -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

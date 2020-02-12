@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/lightbox.min.css">
+    <script type="text/javascript" src="./js/lightbox-plus-jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/project.css">
+    <link rel="stylesheet" href="./css/project-mobile.css" media="screen and (max-width: 620px)">
+    <title>Project | Drink Menu</title>
+</head>
+<body>
+    <div class="header2 center-container bg-light">
+        <h1>Drink Menu Terminal Program</h1>
+    </div>
+    <div class="write-up center-container">
+        <h2>Description</h2>
+        <p>
+            The basic premise of this program is to allow users to narrow down a large list of cocktail recipes based on the ingredients which they want the recipes to contain. The program lets users enter one or more ingredients--say, "Bourbon" and "lime juice"--and then spits out the number of recipes which call for both of these ingredients. The user may then view the list of all such matching recipes--just one in the case of Bourbon and lime juice: the "New Yorker"--and may then open the full recipe right there in the terminal. 
+        </p>
+        <h2>Implementaiton Overview</h2>
+        <p>
+            The source code for this project is written entirely in C++, which includes four source files and their associated headers. They are 1) <span class="underline">main</span>, used to launch the UI; 2) <span class="underline">menuUI</span>, used to manage user commands and to oversee their execution; 3) <span class="underline">IngredientGraph</span>, an ADT for ingredient data; and 4) <span class="underline">RecipeList</span>, an ADT for recipe data. Data for this program is stored and accessed using 2 CSV files: one to match ingredient names to IDs, and one to match recipe names to one or more ingredient IDs as well as the relative file path of a text file containing that recipe's full text.
+        <div class="design">
+            <h2>Design Highlights and Specifics</h2>
+            <h3>Abstract Data Types</h3>
+            <p>
+                Two of the source files are custom Abstract Data Types, one of which is used to store data about ingredients in a tree, and to allow users to retrieve an entire branch of that tree (done via a recursive function). The other custom ADT is a more straightforward list containing data on recipes, which allows users to submit queries based on ingredient IDs. 
+            </p>
+            <h3>Querying Algorithm</h3>
+            <p>In the IngredientGraph class, nodes of ingredient data are stored in a tree, with more specific types of ingredients being the children of more generic types, i.e. "Scotch" is the child of "whisky", "single malt" and "blended" are the children of "Scotch", and so forth (data for generating this tree is contained in one of the CSV files). When a user adds an ingredient to the queue, the program adds the <span class="itallics">entire branch</span> from the graph with that ingredient as the root. Thus, a user may enter "whisky" and will see recipes which only call for scotch, as well as recipes which call for other types of whisky. Likewise, a user may enter "scotch" and will see recipes which only call for "single-malt scotch" or "blended scotch", or just "scotch", but will not see recipes which call for "Bourbon". </p>
+            </p>
+        </div>
+        <h2>Educational Takeaways</h2>
+        <ul>
+            <li>User-defined Abstract Data Types in C++</li>
+            <li>Reading and writing CSV files</li>
+            <li>Recursive Functions</li>
+            <li>Basic C++ features: container classes, streams, header files, pointers</li>
+        </ul>
+    </div>
+    <div class="gallery center-container bg-light">
+        <h1>Gallery</h1>
+        <div class="pics">
+            <a href="./images/project_1/full/01_splash_screen.png" data-lightbox="mygallery" data-title=
+            "The 'splash screen' with instructions, which prints upon running the executable in terminal. The program offers a basic command line, which interprets the 8 commands shown above."
+            >
+                <img src="./images/project_1/mini/01_splash_screen.png" alt="">
+            </a>
+            <a href="./images/project_1/full/02_m_command.png" data-lightbox="mygallery" data-title=
+                "The 'menu' command prints off the recipes which match the user ingredient list, or all of the recipes if no ingredients are selected."
+            >
+                <img src="./images/project_1/mini/02_m_command.png" alt="">
+            </a>
+            <a href="./images/project_1/full/03_s_command.png" data-lightbox="mygallery" data-title=
+            "The 's' command prints the list of ingredients which may be searched."
+            >
+                <img src="./images/project_1/mini/03_s_command.png" alt="">
+            </a>
+            <a href="./images/project_1/full/04_i_command_1.png" data-lightbox="mygallery" data-title=
+            "The 'i' command lets users enter ingredients, which then narrows down the recipe list as shown above."
+            >
+                <img src="./images/project_1/mini/04_i_command_1.png" alt="">
+            </a>
+            <a href="./images/project_1/full/06_o_command_1.png" data-lightbox="mygallery" data-title=
+            "The 'o' command used with the decimal option. This lets users easily open items from the recipe list."
+            >
+                <img src="./images/project_1/mini/06_o_command_1.png" alt="">
+            </a>
+            <a href="./images/project_1/full/07_o_command_2.png" data-lightbox="mygallery" data-title=
+            "The 'o' command may also be used to open a recipe by name from any point in the program, regardless of user ingredients entered."
+            >
+                <img src="./images/project_1/mini/07_o_command_2.png" alt="">
+            </a>
+            <a href="./images/project_1/full/08_ingredient_data.png" data-lightbox="mygallery" data-title=
+            "ingredient_data.csv part 1: Ingredient ID-name pairs"
+            >
+            <img src="./images/project_1/mini/08_ingredient_data.png" alt="">
+            </a>
+            <a href="./images/project_1/full/08_ingredient_paths.png" data-lightbox="mygallery" data-title=
+            "ingredient_data.csv part 2: Ingredient ID-ID pairs: used to by IngredientGraph.cpp to structure the 'ingredient tree'"
+            >
+            <img src="./images/project_1/mini/08_ingredient_paths.png" alt="">
+            </a>
+            <a href="./images/project_1/full/09_ingredient_list.png" data-lightbox="mygallery" data-title=
+            "The basic text file used to automatically generate the previous CSV file"
+            >
+                <img src="./images/project_1/mini/09_ingredient_list.png" alt="">
+            </a>
+            <a href="./images/project_1/full/10_menu_data.png" data-lightbox="mygallery" data-title=
+            "recipe_data.csv: for managing recipe info, including which ingredient each recipe contains and what file each recipe's full text is stored in."
+            >
+                <img src="./images/project_1/mini/10_menu_data.png" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

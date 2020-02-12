@@ -1,0 +1,61 @@
+/* header */
+.header .center-container ul{
+    display: none;
+}
+
+.header .center-container ul li a{
+    display: none;
+}
+
+/* about */
+.about-wrapper .image-wrapper{
+    display: none;
+}
+
+.about-wrapper .image-wrapper img, .blurb{
+    display: none;
+}
+
+.about-wrapper{
+    border-left: white solid 4px;
+}
+
+/* projects */
+.projects-wrapper{
+    border-top: none;
+    border-bottom: none;
+}
+
+.projects-wrapper .projects{
+    border-top: none;
+    border-bottom: none;
+}
+
+.projects-wrapper .image{
+    flex: 1;
+    background: #b3dd9f;
+}
+
+.projects-wrapper .projects{
+    flex: 4;
+}
+
+.projects-wrapper .projects .project .description{
+    display: none;
+}
+
+/* classes */
+.classes .image{
+    flex: 0;
+}
+
+.classes{
+    background: #f6f9fa;
+    border-bottom: none;
+    border-radius: 0px;
+}
+
+/* footer */
+.footer{
+    display: none;
+}
